@@ -7,17 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-     search film:   <input id="input" type="text" placeholder="enter film">
-        <button id="button">search</button>
-    </div>
-    <br>
+    <input type="text" id="text">
+    <button id="butt">click</button>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script> -->
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
-
-    <video width="400" controls>
-        <source src="https://drive.google.com/uc?export=download&id=1JrEZJw5tYDXchpMUoMY_6D94U49LdKl_" type='video/mp4'>
-    </video>
-    <script src="app.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAd599ZB1TxH2vJgWaLJCrEv7jBcmRKNI4",
+    authDomain: "fireb-bf0fe.firebaseapp.com",
+    projectId: "fireb-bf0fe",
+    storageBucket: "fireb-bf0fe.appspot.com",
+    messagingSenderId: "490331405926",
+    appId: "1:490331405926:web:c101e24903857e078a37a7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+</script>
+<script>
+    var text = document.getElementById('text');
+    var button = document.getElementById('button');
+    butt.onclick = function() {
+        firebase.firestore().collection('app').add({
+            text : text.value
+        });
+    };
+</script>
 </body>
 </html>
